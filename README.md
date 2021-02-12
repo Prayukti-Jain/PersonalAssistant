@@ -18,3 +18,10 @@ It is a web based application. Front end is created using HTML, CSS, ReactJS and
 You should have node and MongoDB installed. For the ReactJS part, I have created jsx file which will be converted to js file. For that you should have babel installed.
 
 For running the application, first start MongoDB server. Then start the server and type: http://localhost:5050/login.html in browser.
+
+Future Versions of the application:
+Could be deployed to any of the cloud Services.
+Voice Recognition could be  for adding/updating/deleting a Task. 
+Smart links according to the Task could be added to redirect the working professional for the completion of the task directly.
+More options like repeatation and priority could be added along with more validationals.
+
