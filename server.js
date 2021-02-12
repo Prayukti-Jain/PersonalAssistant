@@ -366,8 +366,8 @@ function reminder(emailId,data){
   let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: 'jljain2011@gmail.com',
-          pass: 'vfbrbcrzzjncgakm'
+          user: Username,
+          pass: password
         }
     });
 
