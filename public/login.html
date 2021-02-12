@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>Your Personal Assistant</title>
+<link rel="icon" type="image/x-icon" href="assets/img/favicon.png" /> 
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<script>
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function validateForm(f)
+{
+var eml=f.username.value;
+var atposition=eml.indexOf("@");  
+var dotposition=eml.lastIndexOf(".");  
+if(atposition<1 || dotposition<atposition+2 || dotposition+2>=eml.length)
+{  
+alert("Please enter a valid username");  
+f.username.focus();
+return false; 
+}
+var pwd=f.password.value;
+if(pwd.length<8)
+{
+alert('Wrong Password');
+f.password.focus();
+return false;
+}
+return true;
+}
+
+window.addEventListener('load',function(){
+var error=getCookie("error");
+document.getElementById("errorSpan").innerHTML=error;
+});
+</script>
+
+</head>
+
+<body>
+    <div id="login">
+        <h3 class="text-center text-white pt-5">Login form</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login-form" class="form" action="login" method="post"  onsubmit='return validateForm(this)'>
+                            <h3 class="text-center text-info">Login</h3>
+                            <div class="form-group">
+                                <label for="username" class="text-info">Username:</label><br>
+                                <input type="text" name="username" id="username" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="text-info">Password:</label><br>
+                                <input type="password" name="password" id="password" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="remember-me" class="text-info">
+			<span id="errorSpan"></span>
+		</label>
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="Submit">
+  		<a href="register.html">Sign up</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
