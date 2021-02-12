@@ -2,7 +2,7 @@ The Personal Assistant helps you keep track of all your tasks so that you don't 
 
 Using the Personal Assistance, you can :
 
-Add your tasks.(According to different categories)
+Add your tasks (According to different categories)
 Update your tasks.
 Delete your tasks.
 View all your tasks.
